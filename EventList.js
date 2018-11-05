@@ -5,14 +5,7 @@ import {
   Text,
   View
 } from 'react-native';
-
-const styles = StyleSheet.create({
-    list: {
-      flex: 1,
-      paddingTop: 20,
-      backgroundColor: '#F3F3F3'
-    },
-  });
+import EventCard from './EventCard';
 
 class EventList extends Component{
 
@@ -29,7 +22,7 @@ class EventList extends Component{
         return(
             <FlatList
             data = {this.state.events}
-            renderItem = {({item}) => <Text>{item.title}</Text>}
+            renderItem = {({item}) => <EventCard event={item}/>}
             keyExtractor = {item=>item.id}
             />
         );
